@@ -229,7 +229,9 @@ HTTP/1.1
 | latitude     | 纬度        | 用户坐标所在的纬度 | double      | 是    | 无    |
 | longitude    | 经度        | 用户坐标所在的经度 | double      | 是    | 无    |
 请求实例：
- POST /location/setposition ?access-token=c73925bfa0f08a641be5db9f5cf0d22ea691e0a7 HTTP/1.1Host: [http://192.168.1.115/reading-partner-php/api/web](http://192.168.1.115/reading-partner-php/api/web) 
+ POST
+
+ <u>/location/setposition ?access-token=c73925bfa0f08a641be5db9f5cf0d22ea691e0a7 HTTP/1.1Host: [http://192.168.1.115/reading-partner-php/api/web](http://192.168.1.115/reading-partner-php/api/web)</u> 
 返回结果：
  成功 
 
