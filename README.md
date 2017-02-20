@@ -68,7 +68,7 @@ HTTP/1.1 Host: [http://192.168.1.115/reading-partner-php/api/web](http://192.16
 | 参数                | 含义    | 规则说明        | 参数类型        | 是否必须 | 缺省值  |
 | ----------------- | ----- | ----------- | ----------- | ---- | ---- |
 | mobile_phone      | 手机号码  | 用户注册的可用手机号码 | integer(11) | 是    | 无    |
-| password          | 密码    | 密码长度6-20位   | integer     | 是    | 无    |
+| password          | 密码    | 密码长度6-20位，由数字或者字母组成   |string    | 是    | 无    |
 | verification_code | 短信验证码 | 4位          | integer     | 是    | 无    |
 
  
@@ -104,7 +104,7 @@ HTTP/1.1 Host: [http://192.168.1.115/reading-partner-php/api/web](http://192.16
 | 参数名          | 含义   | 规则说明        | 参数类型        | 是否必须 | 缺省值  |
 | ------------ | ---- | ----------- | ----------- | ---- | ---- |
 | mobile_phone | 手机号码 | 用户注册的可用手机号码 | integer(11) | 是    | 无    |
-| password     | 密码   | 密码长度6-20    | integer     |      | \|无  |
+| password      | 密码    | 密码长度6-20位，由数字或者字母组成   |string    | 是    | 无    |
 
 
 
@@ -168,7 +168,7 @@ HTTP/1.1
 | 参数名               |    含义 |    规则说明     | 参数类型        | 是否必须    | 缺省值  |
 | ----------------- | ----: | :---------: | ----------- | ------- | ---- |
 | mobile_phone      |  手机号码 | 用户注册的可用手机号码 | integer(11) | 是       | 无    |
-| password          |    密码 |    密码长度     | 6-20位       | integer | 是    |
+| password            | 密码    | 密码长度6-20位，由数字或者字母组成   |string    | 是    | 无    |
 | verification_code | 短信验证码 |     4位      | integer     | 是       | 无    |
  请求实例： POST /register/resetpwd HTTP/1.1 Host: [http://192.168.1.115/reading-partner-php/api/web](http://192.168.1.115/reading-partner-php/api/web) 
 返回结果：
