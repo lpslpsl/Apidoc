@@ -86,14 +86,7 @@ HTTP/1.1 Host: [http://192.168.1.115/reading-partner-php/api/web](http://192.16
 
 注册成功：
 
-    { "code": 200， "message":"注册成功"， "data":{"access_token": "94633564bf58064cca3be21940cc2eb5beea85df" } } 
-返回参数：
-
- 
-
-| 参数           | 含义   | 规则类型   | 参数长度 |
-| ------------ | ---- | ------ | ---- |
-| access_token | 访问授权 | string | 60   |
+    { "code": 200， "message":"注册成功" } 
 
 #### 二、登录登出 
 ######1.账号登录 
