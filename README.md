@@ -296,7 +296,9 @@ HTTP/1.1
 
 返回结果：
 
- { "code": 200, "message": "获取附近用户坐标成功", "data": { "num": 2, "0": { "user_id": "2", "user_name": "小白", "gender": "2", "distance": 0, "avatar_url": { "large": "/images/18228170109/ae8c5711.jpg", "mid": "/images/18228170109/thumb_ae8c5711.jpg" } }, "1": { "user_id": "3", "user_name": null, "gender": "2", "distance": 2.4, "avatar_url": { "large": "/images/18228170109/ae8c57.jpg", "mid": "/images/18228170109/thumb_ae8c57.jpg" } } } } 
+```json
+	 { "code": 200, "message": "获取附近用户坐标成功", "data": { "num": 2, "0": { "user_id": "2", "user_name": "小白", "gender": "2", "distance": 0, "avatar_url": { "large": "/images/18228170109/ae8c5711.jpg", "mid": "/images/18228170109/thumb_ae8c5711.jpg" } }, "1": { "user_id": "3", "user_name": null, "gender": "2", "distance": 2.4, "avatar_url": { "large": "/images/18228170109/ae8c57.jpg", "mid": "/images/18228170109/thumb_ae8c57.jpg" } } } } 
+```
 成功： 
 
 | 字段 含义      | 数据类型       | 长度              |
