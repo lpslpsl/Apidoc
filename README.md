@@ -27,6 +27,14 @@
 - 2000002          数据库无此书籍 
 
 #####3.阅聊状态码 
+- 3000000          用户不存在  
+- 3000001          添加app好友成功，添加环信好友失败
+- 3000002          添加app好友失败
+- 3000003          被解除的好友不存在
+- 3000004          解除环信中的好友成功，解除本地好友失败
+- 3000005          解除环信好友失败
+- 3000006          查询不到好友结果
+
 #####4.定位搜索状态码 4000000 
 - 4000000           设置用户坐标失败
 - 4000001           获取附近用户坐标失败，查询不到相关的结果
@@ -304,13 +312,36 @@ HTTP/1.1
 
 
 请求实例：
-
- <u>POST  /friendinfo/addfriend</u> 
-
-?access-token=c73925bfa0f08a641be5db9f5cf0d22ea691e0a7    HTTP/1.1
-
- Host: http://192.168.1.115/reading-partner-php/api/web
- 返回结果：
- 手机可用：
+ POST <u>/friendinfo/addfriend ?access-token=c73925bfa0f08a641be5db9f5cf0d22ea691e0a7 HTTP/1.1Host: [http://192.168.1.115/reading-partner-php/api/web</u>](http://192.168.1.115/reading-partner-php/api/web)
+返回结果：
+成功：
 
      { "code": 200， "message":"添加app好友成功，添加环信好友成功" } 
+
+
+
+######2.解除好友关系
+接口说明：其中一方好友解除好友关系
+请求参数： 
+
+| 参数名        | 含义   | 规则说明 | 参数类型        | 是否必须 | 缺省值  |
+| ---------- | ---- | ---- | ----------- | ---- | ---- |
+|user_id2    | 用户ID  | 添加好友发起人在用户表中对应的用户ID | integer(11) | 是    | 无    |
+请求实例：
+ POST <u>/friendinfo/removefriend ?access-token=c73925bfa0f08a641be5db9f5cf0d22ea691e0a7 HTTP/1.1Host: [http://192.168.1.115/reading-partner-php/api/web</u>](http://192.168.1.115/reading-partner-php/api/web)
+返回结果： 
+成功：
+     { "code": 200， "message":"解除环信好友成功，解除本地好友成功" } 
+
+######3.查看好友
+接口说明：好友其中一方解除好友关系。
+请求参数：
+
+| 参数名          | 含义        | 规则说明        | 参数类型        | 是否必须 | 缺省值  |
+| ------------ | --------- | ----------- | ----------- | ---- | ---- |
+| access-token | 用户授权Token | 用户授权Token   | integer(11) | 是    | 无    |
+
+请求实例： GET <u>/friendinfo/showfriend ?access-token=iIvChOihED8fVBPWq41OvAGAvzPgSDoc HTTP/1.1Host: [http://192.168.1.115/reading-partner-php/api/web](http://192.168.1.115/reading-partner-php/api/web)</u> 
+返回结果：
+成功：
+    {"code":200,"message":"查询成功","data":[{"user_name":"小花","user_id":"1","avatar_native":"/images/18508236987/a44cd.jpg","avatar_thumb":"/images/18508236987/thumb_a44cd.jpg"}]}
