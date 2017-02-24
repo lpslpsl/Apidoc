@@ -75,18 +75,20 @@ HTTP/1.1 Host: [http://192.168.1.115/reading-partner-php/api/web](http://192.16
  返回结果：
  手机可用： 
 
-    { "code": 200, "message":"手机验证码发送成功" } 
+```json
+{ "code": 200, "message":"手机验证码发送成功" } 
+```
 
 ######2.账号注册  
 接口说明：客户端填写手机号码、密码、验证码到服务器进行验证，验证成功则注册创建。同时创建即时通讯的账号。
 
 请求参数：
 
-| 参数                | 含义    | 规则说明        | 参数类型        | 是否必须 | 缺省值  |
-| ----------------- | ----- | ----------- | ----------- | ---- | ---- |
-| mobile_phone      | 手机号码  | 用户注册的可用手机号码 | integer(11) | 是    | 无    |
-| password          | 密码    | 密码长度6-20位，由数字或者字母组成   |string    | 是    | 无    |
-| verification_code | 短信验证码 | 4位          | integer     | 是    | 无    |
+| 参数                | 含义    | 规则说明                | 参数类型        | 是否必须 | 缺省值  |
+| ----------------- | ----- | ------------------- | ----------- | ---- | ---- |
+| mobile_phone      | 手机号码  | 用户注册的可用手机号码         | integer(11) | 是    | 无    |
+| password          | 密码    | 密码长度6-20位，由数字或者字母组成 | string      | 是    | 无    |
+| verification_code | 短信验证码 | 4位                  | integer     | 是    | 无    |
 
  
 
@@ -103,7 +105,9 @@ HTTP/1.1 Host: [http://192.168.1.115/reading-partner-php/api/web](http://192.16
 
 注册成功：
 
-    { "code": 200， "message":"注册成功" } 
+```json
+{ "code": 200， "message":"注册成功" } 
+```
 
 #### 二、登录登出 
 ######1.账号登录 
@@ -111,10 +115,10 @@ HTTP/1.1 Host: [http://192.168.1.115/reading-partner-php/api/web](http://192.16
 用户可以通过用户名和密码直接登录
  请求参数： 
 
-| 参数名          | 含义   | 规则说明        | 参数类型        | 是否必须 | 缺省值  |
-| ------------ | ---- | ----------- | ----------- | ---- | ---- |
-| mobile_phone | 手机号码 | 用户注册的可用手机号码 | integer(11) | 是    | 无    |
-| password      | 密码    | 密码长度6-20位，由数字或者字母组成   |string    | 是    | 无    |
+| 参数名          | 含义   | 规则说明                | 参数类型        | 是否必须 | 缺省值  |
+| ------------ | ---- | ------------------- | ----------- | ---- | ---- |
+| mobile_phone | 手机号码 | 用户注册的可用手机号码         | integer(11) | 是    | 无    |
+| password     | 密码   | 密码长度6-20位，由数字或者字母组成 | string      | 是    | 无    |
 
 
 
@@ -125,7 +129,9 @@ HTTP/1.1 Host: [http://192.168.1.115/reading-partner-php/api/web](http://192.16
 返回结果： 
 登录成功
 
-     { "code": 200, "message":"登录成功"， "data":{"access_token": "94633564bf58064cca3be21940cc2eb5beea85df" } }
+```json
+ { "code": 200, "message":"登录成功"， "data":{"access_token": "94633564bf58064cca3be21940cc2eb5beea85df" } }
+```
 
 ######2.退出登录
  接口说明：
@@ -142,7 +148,9 @@ HTTP/1.1 Host: [http://192.168.1.115/reading-partner-php/api/web](http://192.16
  退出成功
 ​    
 
-    { "code": 200, "message":"退出登录成功"，} 
+```json
+{ "code": 200, "message":"退出登录成功"，} 
+```
 
 ######三、密码修改 
 ######1.发送验证码 
@@ -165,7 +173,9 @@ HTTP/1.1
  返回结果：
  手机可用：
 
-     { "code": 200， "message":"手机验证码发送成功" } 
+```json
+ { "code": 200， "message":"手机验证码发送成功" } 
+```
 
 ######2.重置密码
  接口说明：
@@ -175,16 +185,18 @@ HTTP/1.1
 
 
 
-| 参数名               |    含义 |    规则说明     | 参数类型        | 是否必须    | 缺省值  |
-| ----------------- | ----: | :---------: | ----------- | ------- | ---- |
-| mobile_phone      |  手机号码 | 用户注册的可用手机号码 | integer(11) | 是       | 无    |
-| password            | 密码    | 密码长度6-20位，由数字或者字母组成   |string    | 是    | 无    |
-| verification_code | 短信验证码 |     4位      | integer     | 是       | 无    |
+| 参数名               |    含义 |        规则说明         | 参数类型        | 是否必须 | 缺省值  |
+| ----------------- | ----: | :-----------------: | ----------- | ---- | ---- |
+| mobile_phone      |  手机号码 |     用户注册的可用手机号码     | integer(11) | 是    | 无    |
+| password          |    密码 | 密码长度6-20位，由数字或者字母组成 | string      | 是    | 无    |
+| verification_code | 短信验证码 |         4位          | integer     | 是    | 无    |
  请求实例： POST /register/resetpwd HTTP/1.1 Host: [http://192.168.1.115/reading-partner-php/api/web](http://192.168.1.115/reading-partner-php/api/web) 
 返回结果：
  重置成功： 
 
-    { "code": 200， "message":"重置密码成功"} 
+```json
+{ "code": 200， "message":"重置密码成功"} 
+```
 #####四、个人信息相关
 ###### 1.个人信息获取 接口说明：用于获取个人信息 请求参数：
 
@@ -195,8 +207,10 @@ HTTP/1.1
  GET /userinfo/getuserinfo ?access-token=iIvChOihED8fVBPWq41OvAGAvzPgSDoc HTTP/1.1Host: [http://192.168.1.115/reading-partner-php/api/web](http://192.168.1.115/reading-partner-php/api/web) 
 返回结果：
  成功
+```json
+{ "code": 200, "message": "获取个人信息成功", "data": { "user_name": "小白", "gender": 2, "signature": "开心", "avatar_url": { "large": "/uploads/17711351007/7452749ee7326a1a.jpg", "mid" : "/uploads/17711351007/thumb_7452749ee7326a1a.jpg" } } }
+```
 
- `{ "code": 200, "message": "获取个人信息成功", "data": { "user_name": "小白", "gender": 2, "signature": "开心", "avatar_url": { "large": "/uploads/17711351007/7452749ee7326a1a.jpg", "mid" : "/uploads/17711351007/thumb_7452749ee7326a1a.jpg" } } }`
 
 ###### 2.设置用户头像
  接口说明：用于账户设置个人信息时，上传个人头像 请求参数：
@@ -211,7 +225,9 @@ HTTP/1.1
  返回结果：
  成功
 
-     { "code": 200, "message": "图片上传成功，保存成功"} 
+```json
+ { "code": 200, "message": "图片上传成功，保存成功"} 
+```
 ######3.个人信息设置
  接口说明：设置用户名，个性签名，性别。同时更新即时通讯用户表中的昵称  请求参数：
 
@@ -225,18 +241,21 @@ HTTP/1.1
 返回结果：
  成功：
 
-    {"code":200,"message":"个人信息设置成功，修改环信用户昵称成功","data":{"user_name":"小花","gender":"1","signature":"啦啦啦"}}
+```json
+{"code":200,"message":"个人信息设置成功，修改环信用户昵称成功","data":{"user_name":"小花","gender":"1","signature":"啦啦啦"}}
+```
 ######4.删除用户  
 接口说明：先删除指定用户对应即时通讯表中的账号记录，再删掉本地服务器中对应的该用户  请求参数：
 
-| 参数名          | 含义        | 规则说明          | 参数类型            | 是否必须 | 缺省值  |
-| ------------ | --------- | ------------- | --------------- | ---- | ---- |
-| access-token | 用户授权Token | 用户授权Token     | integer(11) 是   | 无    |      |
+| 参数名          | 含义        | 规则说明      | 参数类型          | 是否必须 | 缺省值  |
+| ------------ | --------- | --------- | ------------- | ---- | ---- |
+| access-token | 用户授权Token | 用户授权Token | integer(11) 是 | 无    |      |
 请求实例： GET <u>userinfo/deleteuser ?access-token=iIvChOihED8fVBPWq41OvAGAvzPgSDoc HTTP/1.1Host: [http://192.168.1.115/reading-partner-php/api/web](http://192.168.1.115/reading-partner-php/api/web)</u> 
 返回结果：
  成功：
-
-  {"code":200,"message":"删除环信用户成功，删除app用户成功","data":""}
+```json
+	{"code":200,"message":"删除环信用户成功，删除app用户成功","data":""}
+```
 #####五、LBS
 
 ######1.添加或者修改用户定位坐标 
@@ -256,7 +275,9 @@ HTTP/1.1
 返回结果：
  成功 
 
-    { "code": 200, "message": "设置用户坐标成功",}
+```json
+{ "code": 200, "message": "设置用户坐标成功",}
+```
 ###### 2.查询LBS定位 
 接口说明：
 查询距离用户一定范围内的也在使用该APP的用户
@@ -275,7 +296,7 @@ HTTP/1.1
 
 返回结果：
 
- `{ "code": 200, "message": "获取附近用户坐标成功", "data": { "num": 2, "0": { "user_id": "2", "user_name": "小白", "gender": "2", "distance": 0, "avatar_url": { "large": "/images/18228170109/ae8c5711.jpg", "mid": "/images/18228170109/thumb_ae8c5711.jpg" } }, "1": { "user_id": "3", "user_name": null, "gender": "2", "distance": 2.4, "avatar_url": { "large": "/images/18228170109/ae8c57.jpg", "mid": "/images/18228170109/thumb_ae8c57.jpg" } } } }` 
+ { "code": 200, "message": "获取附近用户坐标成功", "data": { "num": 2, "0": { "user_id": "2", "user_name": "小白", "gender": "2", "distance": 0, "avatar_url": { "large": "/images/18228170109/ae8c5711.jpg", "mid": "/images/18228170109/thumb_ae8c5711.jpg" } }, "1": { "user_id": "3", "user_name": null, "gender": "2", "distance": 2.4, "avatar_url": { "large": "/images/18228170109/ae8c57.jpg", "mid": "/images/18228170109/thumb_ae8c57.jpg" } } } } 
 成功： 
 
 | 字段 含义      | 数据类型       | 长度              |
@@ -299,24 +320,30 @@ HTTP/1.1
 返回结果： 
 成功： 
 
-    { "code": 200, "message": "用户反馈信息提交成功", }
+```json
+{ "code": 200, "message": "用户反馈信息提交成功", }
+```
 ######七、阅聊 
 ######1.添加好友列表 
 接口说明：
 将接受人和添加好友发起人添加到好友列表  请求参数：
 
-| 参数名          | 含义   | 规则说明        | 参数类型        | 是否必须 | 缺省值  |
-| ------------ | ---- | ----------- | ----------- | ---- | ---- |
-|user_id2| 用户ID | 添加好友发起人在用户表中对应的用户ID | integer(11) | 是    | 无    |
+| 参数名      | 含义   | 规则说明                | 参数类型        | 是否必须 | 缺省值  |
+| -------- | ---- | ------------------- | ----------- | ---- | ---- |
+| user_id2 | 用户ID | 添加好友发起人在用户表中对应的用户ID | integer(11) | 是    | 无    |
 
 
 
 请求实例：
- POST <u>/friendinfo/addfriend ?access-token=c73925bfa0f08a641be5db9f5cf0d22ea691e0a7 HTTP/1.1Host: [http://192.168.1.115/reading-partner-php/api/web</u>](http://192.168.1.115/reading-partner-php/api/web)
+ POST <u>/friendinfo/addfriend ?access-token=c73925bfa0f08a641be5db9f5cf0d22ea691e0a7 HTTP/1.1Host: 
+
+[http://192.168.1.115/reading-partner-php/api/web</u>](http://192.168.1.115/reading-partner-php/api/web)
 返回结果：
 成功：
 
-     { "code": 200， "message":"添加app好友成功，添加环信好友成功" } 
+```json
+ { "code": 200， "message":"添加app好友成功，添加环信好友成功" } 
+```
 
 
 
@@ -324,24 +351,35 @@ HTTP/1.1
 接口说明：其中一方好友解除好友关系
 请求参数： 
 
-| 参数名        | 含义   | 规则说明 | 参数类型        | 是否必须 | 缺省值  |
-| ---------- | ---- | ---- | ----------- | ---- | ---- |
-|user_id2    | 用户ID  | 添加好友发起人在用户表中对应的用户ID | integer(11) | 是    | 无    |
+| 参数名      | 含义   | 规则说明                | 参数类型        | 是否必须 | 缺省值  |
+| -------- | ---- | ------------------- | ----------- | ---- | ---- |
+| user_id2 | 用户ID | 添加好友发起人在用户表中对应的用户ID | integer(11) | 是    | 无    |
 请求实例：
  POST <u>/friendinfo/removefriend ?access-token=c73925bfa0f08a641be5db9f5cf0d22ea691e0a7 HTTP/1.1Host: [http://192.168.1.115/reading-partner-php/api/web</u>](http://192.168.1.115/reading-partner-php/api/web)
 返回结果： 
 成功：
-     { "code": 200， "message":"解除环信好友成功，解除本地好友成功" } 
+```json
+ { "code": 200， "message":"解除环信好友成功，解除本地好友成功" } 
+```
 
 ######3.查看好友
 接口说明：好友其中一方解除好友关系。
 请求参数：
 
-| 参数名          | 含义        | 规则说明        | 参数类型        | 是否必须 | 缺省值  |
-| ------------ | --------- | ----------- | ----------- | ---- | ---- |
-| access-token | 用户授权Token | 用户授权Token   | integer(11) | 是    | 无    |
+| 参数名          | 含义        | 规则说明      | 参数类型        | 是否必须 | 缺省值  |
+| ------------ | --------- | --------- | ----------- | ---- | ---- |
+| access-token | 用户授权Token | 用户授权Token | integer(11) | 是    | 无    |
 
-请求实例： GET <u>/friendinfo/showfriend ?access-token=iIvChOihED8fVBPWq41OvAGAvzPgSDoc HTTP/1.1Host: [http://192.168.1.115/reading-partner-php/api/web](http://192.168.1.115/reading-partner-php/api/web)</u> 
+请求实例：
+
+ GET <u>/friendinfo/showfriend ?access-token=iIvChOihED8fVBPWq41OvAGAvzPgSDoc 
+
+HTTP/1.1Host: 
+
+[http://192.168.1.115/reading-partner-php/api/web](http://192.168.1.115/reading-partner-php/api/web)</u> 
 返回结果：
 成功：
-    {"code":200,"message":"查询成功","data":[{"user_name":"小花","user_id":"1","avatar_native":"/images/18508236987/a44cd.jpg","avatar_thumb":"/images/18508236987/thumb_a44cd.jpg"}]}
+
+```json
+{"code":200,"message":"查询成功","data":[{"user_name":"小花","user_id":"1","avatar_native":"/images/18508236987/a44cd.jpg","avatar_thumb":"/images/18508236987/thumb_a44cd.jpg"}]}
+```
